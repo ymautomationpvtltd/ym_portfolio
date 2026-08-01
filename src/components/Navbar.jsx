@@ -19,11 +19,11 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 	}, []);
 
 	const navLinks = [
-		{ name: "About Founder", href: "#about" },
-		{ name: "YM Venture", href: "#venture" },
+		{ name: "About Me", href: "#about" },
+		{ name: "My Ventures", href: "#venture" },
 		{ name: "Investor Highlights", href: "#investor" },
 		{ name: "Engineering Stack", href: "#tech" },
-		{ name: "Contact & ZeptoMail", href: "#contact" },
+		{ name: "Contact Me", href: "#contact" },
 	];
 
 	return (

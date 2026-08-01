@@ -15,10 +15,26 @@
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #60a5fa 100%);
+/* YM Automation Official Amber Gold Gradient */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #ffe082 0%, #ffb700 50%, #ff9800 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Dark Mode Glass Cards */
+.dark-glass-card {
+  background: rgba(30, 33, 43, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 183, 0, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.dark-glass-card:hover {
+  background: rgba(36, 40, 52, 0.95);
+  border-color: rgba(255, 183, 0, 0.4);
+  box-shadow: 0 16px 40px -12px rgba(255, 183, 0, 0.15);
 }
 
 /* Custom Scrollbar */
@@ -31,7 +47,7 @@
 }
 
 .dark ::-webkit-scrollbar-track {
-  background: #090d16;
+  background: #14161d;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -40,9 +56,13 @@
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #2e3342;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #015CCF;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #ffb700;
 }

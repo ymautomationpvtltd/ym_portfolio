@@ -11,7 +11,7 @@ import InvestorModal from './components/InvestorModal';
 
 export default function App() {
   const [isInvestorModalOpen, setIsInvestorModalOpen] = useState(false);
-  const [theme, setTheme] = useState('light'); // 'light' (Primary #015CCF on #ebf7ff) or 'dark' (Cyber Dark)
+  const [theme, setTheme] = useState('light'); // 'light' (Primary #015CCF on #ebf7ff) or 'dark' (YM Gold #ffb700 on Charcoal #14161d)
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
@@ -28,8 +28,8 @@ export default function App() {
   const isDark = theme === 'dark';
 
   return (
-    <div className={`min-h-screen font-sans selection:bg-[#015CCF] selection:text-white transition-colors duration-300 ${
-      isDark ? 'bg-[#090d16] text-slate-100' : 'bg-[#ebf7ff] text-slate-900'
+    <div className={`min-h-screen font-sans transition-colors duration-300 ${
+      isDark ? 'bg-[#14161d] text-slate-100 selection:bg-[#ffb700] selection:text-slate-950' : 'bg-[#ebf7ff] text-slate-900 selection:bg-[#015CCF] selection:text-white'
     }`}>
       
       {/* Navigation Header with Theme Toggle */}

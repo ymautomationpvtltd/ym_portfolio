@@ -31,7 +31,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 			className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
 				scrolled ?
 					isDark ?
-						"bg-[#090d16]/95 backdrop-blur-md border-b border-slate-800/80 py-3 shadow-xl"
+						"bg-[#14161d]/95 backdrop-blur-md border-b border-[#2e3342] py-3 shadow-xl"
 					:	"bg-[#ebf7ff]/95 backdrop-blur-md border-b border-blue-200/80 py-3 shadow-md"
 				:	"bg-transparent py-4 sm:py-5"
 			}`}
@@ -46,18 +46,18 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 						<div
 							className={`relative w-10 h-10 rounded-xl p-0.5 shadow-md transition-transform group-hover:scale-105 shrink-0 ${
 								isDark ?
-									"bg-gradient-to-br from-cyan-400 to-blue-600 shadow-cyan-500/20"
+									"bg-gradient-to-br from-[#ffb700] to-amber-600 shadow-[#ffb700]/25"
 								:	"bg-gradient-to-br from-[#015CCF] to-blue-600 shadow-[#015CCF]/20"
 							}`}
 						>
 							<div
 								className={`w-full h-full rounded-[10px] flex items-center justify-center ${
-									isDark ? "bg-[#090d16]" : "bg-white"
+									isDark ? "bg-[#14161d]" : "bg-white"
 								}`}
 							>
 								<Cpu
 									className={`w-5 h-5 group-hover:rotate-12 transition-transform ${
-										isDark ? "text-cyan-400" : (
+										isDark ? "text-[#ffb700]" : (
 											"text-[#015CCF]"
 										)
 									}`}
@@ -73,19 +73,12 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 								>
 									Yogeshwaran M.
 								</span>
-								{/* <span className={`inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-mono font-bold border whitespace-nowrap ${
-                  isDark 
-                    ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/30' 
-                    : 'bg-[#015CCF]/10 text-[#015CCF] border-[#015CCF]/30'
-                }`}>
-                  MD @ YM
-                </span> */}
 							</div>
 							<p
 								className={`text-[10px] sm:text-[11px] font-mono tracking-wider whitespace-nowrap ${
-									isDark ? "text-slate-400" : (
-										"text-slate-600 font-medium"
-									)
+									isDark ?
+										"text-[#ffb700] font-bold"
+									:	"text-slate-600 font-medium"
 								}`}
 							>
 								YM AUTOMATION PVT LTD
@@ -97,7 +90,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 					<nav
 						className={`hidden xl:flex items-center gap-1 p-1.5 rounded-full border shadow-sm backdrop-blur-sm shrink-0 ${
 							isDark ?
-								"bg-slate-900/60 border-slate-800/80"
+								"bg-[#1e212b]/80 border-[#2e3342]"
 							:	"bg-white/80 border-blue-200/80"
 						}`}
 					>
@@ -107,7 +100,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 								href={link.href}
 								className={`px-3.5 py-1.5 text-xs font-semibold rounded-full transition-all whitespace-nowrap ${
 									isDark ?
-										"text-slate-300 hover:text-white hover:bg-slate-800/80"
+										"text-slate-300 hover:text-[#ffb700] hover:bg-[#2e3342]/70"
 									:	"text-slate-700 hover:text-[#015CCF] hover:bg-blue-50"
 								}`}
 							>
@@ -123,20 +116,20 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							onClick={toggleTheme}
 							className={`p-2 rounded-xl border text-xs font-semibold flex items-center gap-1.5 transition-all whitespace-nowrap shrink-0 ${
 								isDark ?
-									"bg-slate-900 border-slate-800 text-amber-400 hover:bg-slate-800"
+									"bg-[#1e212b] border-[#2e3342] text-[#ffb700] hover:bg-[#282c38]"
 								:	"bg-white border-blue-200 text-[#015CCF] hover:bg-blue-50 shadow-sm"
 							}`}
 							title={
 								isDark ?
 									"Switch to Light Mode (#015CCF on #ebf7ff)"
-								:	"Switch to Dark Mode"
+								:	"Switch to YM Automation Dark Gold Mode"
 							}
 							aria-label="Toggle Theme"
 						>
 							{isDark ?
 								<>
-									<Sun className="w-4 h-4 shrink-0" />
-									<span className="font-mono text-[11px] text-amber-300 whitespace-nowrap">
+									<Sun className="w-4 h-4 shrink-0 text-[#ffb700]" />
+									<span className="font-mono text-[11px] text-[#ffb700] font-bold whitespace-nowrap">
 										Light Mode
 									</span>
 								</>
@@ -149,26 +142,12 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							}
 						</button>
 
-						<a
-							href="#contact"
-							className={`px-3 py-2 text-xs font-semibold flex items-center gap-1.5 transition-colors whitespace-nowrap shrink-0 ${
-								isDark ?
-									"text-slate-300 hover:text-cyan-400"
-								:	"text-slate-700 hover:text-[#015CCF]"
-							}`}
-						>
-							<Mail
-								className={`w-3.5 h-3.5 shrink-0 ${isDark ? "text-cyan-400" : "text-[#015CCF]"}`}
-							/>
-							<span>ZeptoMail</span>
-						</a>
-
 						<button
 							onClick={onOpenInvestorModal}
-							className={`relative group overflow-hidden px-4 py-2 rounded-xl text-white font-bold text-xs shadow-lg transition-all hover:scale-[1.02] whitespace-nowrap shrink-0 ${
+							className={`relative group overflow-hidden px-4 py-2 rounded-xl font-bold text-xs shadow-lg transition-all hover:scale-[1.02] whitespace-nowrap shrink-0 ${
 								isDark ?
-									"bg-gradient-to-r from-cyan-500 to-blue-600 shadow-cyan-500/25 hover:shadow-cyan-500/40"
-								:	"bg-[#015CCF] hover:bg-[#014ea4] shadow-[#015CCF]/25 hover:shadow-[#015CCF]/40"
+									"bg-gradient-to-r from-[#ffb700] to-amber-500 text-slate-950 shadow-[#ffb700]/25 hover:shadow-[#ffb700]/40 font-extrabold"
+								:	"bg-[#015CCF] hover:bg-[#014ea4] text-white shadow-[#015CCF]/25 hover:shadow-[#015CCF]/40"
 							}`}
 						>
 							<span className="relative z-10 flex items-center gap-1.5 whitespace-nowrap">
@@ -184,7 +163,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							onClick={toggleTheme}
 							className={`p-2 rounded-lg border text-xs font-bold shrink-0 ${
 								isDark ?
-									"bg-slate-900 border-slate-800 text-amber-400"
+									"bg-[#1e212b] border-[#2e3342] text-[#ffb700]"
 								:	"bg-white border-blue-200 text-[#015CCF]"
 							}`}
 							aria-label="Toggle Theme"
@@ -198,7 +177,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							onClick={onOpenInvestorModal}
 							className={`px-3 py-1.5 rounded-lg border text-xs font-bold whitespace-nowrap shrink-0 ${
 								isDark ?
-									"bg-cyan-500/10 text-cyan-400 border-cyan-500/30"
+									"bg-[#ffb700]/15 text-[#ffb700] border-[#ffb700]/40"
 								:	"bg-[#015CCF]/10 text-[#015CCF] border-[#015CCF]/30"
 							}`}
 						>
@@ -208,7 +187,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							className={`p-2 rounded-lg border shrink-0 ${
 								isDark ?
-									"bg-slate-900 border-slate-800 text-slate-400"
+									"bg-[#1e212b] border-[#2e3342] text-slate-300"
 								:	"bg-white border-blue-200 text-slate-700"
 							}`}
 							aria-label="Toggle Navigation Menu"
@@ -226,7 +205,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 				<div
 					className={`xl:hidden border-b px-4 pt-3 pb-6 space-y-3 mt-3 shadow-xl animate-fadeIn ${
 						isDark ?
-							"bg-[#0c121e] border-slate-800"
+							"bg-[#181a22] border-[#2e3342]"
 						:	"bg-white border-blue-200"
 					}`}
 				>
@@ -237,7 +216,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							onClick={() => setMobileMenuOpen(false)}
 							className={`block px-3 py-2 text-sm font-semibold rounded-lg whitespace-nowrap ${
 								isDark ?
-									"text-slate-300 hover:text-white hover:bg-slate-800/60"
+									"text-slate-200 hover:text-[#ffb700] hover:bg-[#282c38]"
 								:	"text-slate-700 hover:text-[#015CCF] hover:bg-blue-50"
 							}`}
 						>
@@ -250,10 +229,10 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 								setMobileMenuOpen(false);
 								onOpenInvestorModal();
 							}}
-							className={`w-full py-2.5 rounded-xl text-white font-bold text-xs text-center flex items-center justify-center gap-1.5 whitespace-nowrap ${
+							className={`w-full py-2.5 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5 whitespace-nowrap ${
 								isDark ?
-									"bg-gradient-to-r from-cyan-500 to-blue-600"
-								:	"bg-[#015CCF]"
+									"bg-gradient-to-r from-[#ffb700] to-amber-500 text-slate-950 font-extrabold"
+								:	"bg-[#015CCF] text-white"
 							}`}
 						>
 							<span>Request Investor Pitch Deck</span>

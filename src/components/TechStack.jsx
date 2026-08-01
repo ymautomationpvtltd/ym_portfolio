@@ -80,7 +80,7 @@ export default function TechStack({ theme }) {
 
   return (
     <section id="tech" className={`py-24 relative overflow-hidden transition-colors duration-300 ${
-      isDark ? 'bg-[#090d16]' : 'bg-[#ebf7ff]'
+      isDark ? 'bg-[#14161d]' : 'bg-[#ebf7ff]'
     }`}>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -88,7 +88,7 @@ export default function TechStack({ theme }) {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
           <div className={`inline-flex items-center gap-2 px-3.5 py-1 rounded-full border text-xs font-mono font-bold shadow-sm ${
-            isDark ? 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400' : 'bg-white border-[#015CCF]/30 text-[#015CCF]'
+            isDark ? 'bg-[#ffb700]/15 border-[#ffb700]/40 text-[#ffb700]' : 'bg-white border-[#015CCF]/30 text-[#015CCF]'
           }`}>
             <Cpu className="w-3.5 h-3.5" />
             <span>ENGINEERING COMPETENCIES</span>
@@ -111,10 +111,10 @@ export default function TechStack({ theme }) {
               className={`px-4 py-2 rounded-xl text-xs font-mono transition-all border ${
                 selectedCategory === cat.id
                   ? isDark
-                    ? 'bg-cyan-500 text-slate-950 font-bold border-cyan-400 shadow-lg shadow-cyan-500/20'
+                    ? 'bg-[#ffb700] text-slate-950 font-extrabold border-[#ffb700] shadow-lg shadow-[#ffb700]/25'
                     : 'bg-[#015CCF] text-white font-bold border-[#015CCF] shadow-md shadow-[#015CCF]/20'
                   : isDark
-                    ? 'bg-slate-900/80 text-slate-400 border-slate-800 hover:text-white hover:border-slate-700'
+                    ? 'bg-[#1e212b] text-slate-400 border-[#2e3342] hover:text-[#ffb700] hover:border-slate-700'
                     : 'bg-white text-slate-700 border-blue-200 hover:text-[#015CCF] hover:border-blue-300'
               }`}
             >
@@ -132,20 +132,20 @@ export default function TechStack({ theme }) {
                 key={index}
                 className={`rounded-2xl p-6 border transition-all space-y-4 flex flex-col justify-between ${
                   isDark 
-                    ? 'glass-card glass-card-hover border-slate-800' 
+                    ? 'bg-[#1e212b] hover:bg-[#242834] border-[#2e3342] hover:border-[#ffb700]/40 shadow-lg' 
                     : 'bg-white/90 hover:bg-white border-blue-200 hover:border-[#015CCF]/40 shadow-md hover:shadow-xl'
                 }`}
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className={`p-2.5 rounded-xl border ${
-                      isDark ? 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20' : 'bg-[#015CCF]/10 text-[#015CCF]'
+                      isDark ? 'bg-[#ffb700]/15 text-[#ffb700] border-[#ffb700]/30' : 'bg-[#015CCF]/10 text-[#015CCF]'
                     }`}>
                       <IconComp className="w-5 h-5" />
                     </div>
                     <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold border ${
                       isDark 
-                        ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' 
+                        ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' 
                         : 'bg-emerald-50 text-emerald-700 border-emerald-200'
                     }`}>
                       {skill.level}
@@ -161,12 +161,12 @@ export default function TechStack({ theme }) {
                   </p>
                 </div>
 
-                <div className={`space-y-3 pt-3 border-t ${isDark ? 'border-slate-800/80' : 'border-slate-100'}`}>
+                <div className={`space-y-3 pt-3 border-t ${isDark ? 'border-[#2e3342]' : 'border-slate-100'}`}>
                   <div className="flex flex-wrap gap-1.5">
                     {skill.tags.map((t, i) => (
                       <span key={i} className={`px-2 py-0.5 rounded text-[10px] font-mono border ${
                         isDark 
-                          ? 'bg-slate-900 text-slate-300 border-slate-800' 
+                          ? 'bg-[#14161d] text-slate-300 border-[#2e3342]' 
                           : 'bg-blue-50 text-slate-700 border-blue-100 font-medium'
                       }`}>
                         {t}

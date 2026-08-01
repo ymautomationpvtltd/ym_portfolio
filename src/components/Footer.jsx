@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cpu, ArrowUp, Linkedin, ExternalLink, ShieldCheck } from 'lucide-react';
+import { Cpu, Linkedin, Globe, Mail, ArrowUp, Heart } from 'lucide-react';
 
 export default function Footer({ theme }) {
   const isDark = theme === 'dark';
@@ -9,89 +9,98 @@ export default function Footer({ theme }) {
   };
 
   return (
-    <footer className={`border-t py-12 relative transition-colors duration-300 ${
-      isDark ? 'bg-[#070a12] border-slate-800 text-slate-400' : 'bg-white border-blue-200 text-slate-600 shadow-inner'
+    <footer className={`border-t transition-colors duration-300 ${
+      isDark ? 'bg-[#111318] border-[#2e3342] text-slate-400' : 'bg-slate-900 border-slate-800 text-slate-300'
     }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           
-          {/* Brand Column */}
-          <div className="md:col-span-6 space-y-3">
-            <div className="flex items-center gap-3">
-              <div className={`w-9 h-9 rounded-xl p-0.5 shadow-md ${
-                isDark ? 'bg-gradient-to-br from-cyan-500 to-blue-600' : 'bg-gradient-to-br from-[#015CCF] to-blue-600'
+          {/* Brand Info */}
+          <div className="md:col-span-5 space-y-3 text-left">
+            <a href="#" className="flex items-center gap-3">
+              <div className={`w-9 h-9 rounded-xl p-0.5 shadow-md flex items-center justify-center ${
+                isDark ? 'bg-gradient-to-br from-[#ffb700] to-amber-600' : 'bg-gradient-to-br from-[#015CCF] to-blue-600'
               }`}>
                 <div className={`w-full h-full rounded-[10px] flex items-center justify-center ${
-                  isDark ? 'bg-[#090d16]' : 'bg-white'
+                  isDark ? 'bg-[#14161d]' : 'bg-white'
                 }`}>
-                  <Cpu className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-[#015CCF]'}`} />
+                  <Cpu className={`w-4 h-4 ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`} />
                 </div>
               </div>
-              <span className={`font-extrabold text-lg font-sans ${isDark ? 'text-white' : 'text-slate-900'}`}>
+              <span className="text-lg font-bold text-white tracking-tight">
                 Yogeshwaran Muralidharan
               </span>
-            </div>
-            <p className={`text-xs max-w-md leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-              Managing Director of <strong className={isDark ? 'text-slate-200' : 'text-slate-900'}>YM Automation Private Limited</strong> (Coimbatore, India). Mechatronics B.E., M.S. IoT & Sensor Systems, PG Industrial Automation, L&T Certified Automation Engineer.
+            </a>
+            <p className="text-xs leading-relaxed max-w-sm text-slate-400 font-medium">
+              Managing Director & Founder at <strong className="text-slate-200">YM Automation Private Limited</strong>. Specialized in Mechatronics, IIoT Sensor Systems, and Industrial Automation Cells.
+            </p>
+            <p className={`text-[11px] font-mono font-semibold ${isDark ? 'text-[#ffb700]' : 'text-cyan-400'}`}>
+              Coimbatore, Tamil Nadu, India
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div className="md:col-span-4 flex flex-wrap gap-4 text-xs font-mono font-bold">
-            <a href="#about" className={`transition-colors ${isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'}`}>About Founder</a>
-            <a href="#venture" className={`transition-colors ${isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'}`}>YM Venture</a>
-            <a href="#investor" className={`transition-colors ${isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'}`}>Investor Highlights</a>
-            <a href="#tech" className={`transition-colors ${isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'}`}>Tech Stack</a>
-            <a href="#contact" className={`transition-colors ${isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'}`}>Contact ZeptoMail</a>
+          {/* Nav Links */}
+          <div className="md:col-span-4 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold">
+            <a href="#about" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>About Founder</a>
+            <a href="#venture" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>YM Venture</a>
+            <a href="#investor" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Investor Pitch</a>
+            <a href="#tech" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Tech Competencies</a>
+            <a href="#contact" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Contact & ZeptoMail</a>
           </div>
 
-          {/* Back to Top */}
-          <div className="md:col-span-2 flex justify-start md:justify-end">
+          {/* Social Links & Back to Top */}
+          <div className="md:col-span-3 flex items-center justify-start md:justify-end gap-3">
+            <a
+              href="https://www.linkedin.com/in/yogeshwaranmuralidharan/"
+              target="_blank"
+              rel="noreferrer"
+              className={`p-2.5 rounded-xl border transition-colors ${
+                isDark 
+                  ? 'bg-[#1e212b] border-[#2e3342] text-slate-300 hover:text-[#ffb700] hover:border-[#ffb700]' 
+                  : 'bg-slate-800 border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-400'
+              }`}
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin className="w-4 h-4" />
+            </a>
+
+            <a
+              href="https://www.ymautomation.com/"
+              target="_blank"
+              rel="noreferrer"
+              className={`p-2.5 rounded-xl border transition-colors ${
+                isDark 
+                  ? 'bg-[#1e212b] border-[#2e3342] text-slate-300 hover:text-[#ffb700] hover:border-[#ffb700]' 
+                  : 'bg-slate-800 border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-400'
+              }`}
+              aria-label="YM Automation Portal"
+            >
+              <Globe className="w-4 h-4" />
+            </a>
+
             <button
               onClick={scrollToTop}
-              className={`p-3 rounded-xl border transition-all flex items-center gap-2 text-xs font-mono font-bold ${
+              className={`p-2.5 rounded-xl border transition-colors ${
                 isDark 
-                  ? 'bg-slate-900 border-slate-800 hover:border-cyan-500 text-slate-300 hover:text-white' 
-                  : 'bg-blue-50 border-blue-200 hover:border-[#015CCF] text-slate-700 hover:text-[#015CCF]'
+                  ? 'bg-[#1e212b] border-[#2e3342] text-slate-300 hover:text-[#ffb700] hover:border-[#ffb700]' 
+                  : 'bg-slate-800 border-slate-700 text-slate-300 hover:text-cyan-400 hover:border-cyan-400'
               }`}
+              aria-label="Scroll to top"
             >
-              <span>Top</span>
-              <ArrowUp className={`w-4 h-4 ${isDark ? 'text-cyan-400' : 'text-[#015CCF]'}`} />
+              <ArrowUp className="w-4 h-4" />
             </button>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className={`pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono ${
-          isDark ? 'border-slate-900' : 'border-slate-100 font-medium'
+        <div className={`mt-8 pt-8 border-t flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono gap-4 ${
+          isDark ? 'border-[#2e3342] text-slate-500' : 'border-slate-800 text-slate-500'
         }`}>
-          <p>© {new Date().getFullYear()} Yogeshwaran Muralidharan. All Rights Reserved.</p>
-          <div className="flex items-center gap-4">
-            <a 
-              href="https://www.linkedin.com/in/yogeshwaranmuralidharan/" 
-              target="_blank" 
-              rel="noreferrer"
-              className={`flex items-center gap-1 transition-colors font-bold ${
-                isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'
-              }`}
-            >
-              <Linkedin className={`w-3.5 h-3.5 ${isDark ? 'text-cyan-400' : 'text-[#015CCF]'}`} />
-              <span>LinkedIn</span>
-            </a>
-            <a 
-              href="https://www.ymautomation.com/" 
-              target="_blank" 
-              rel="noreferrer"
-              className={`flex items-center gap-1 transition-colors font-bold ${
-                isDark ? 'hover:text-cyan-400' : 'hover:text-[#015CCF]'
-              }`}
-            >
-              <ExternalLink className={`w-3.5 h-3.5 ${isDark ? 'text-cyan-400' : 'text-[#015CCF]'}`} />
-              <span>ymautomation.com</span>
-            </a>
-          </div>
+          <p>© {new Date().getFullYear()} Yogeshwaran Muralidharan • YM Automation Private Limited. All rights reserved.</p>
+          <p className="flex items-center gap-1">
+            <span>Built for Investors & Industry 4.0 Enterprises</span>
+          </p>
         </div>
 
       </div>

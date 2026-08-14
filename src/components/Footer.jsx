@@ -32,20 +32,20 @@ export default function Footer({ theme }) {
               </span>
             </a>
             <p className="text-xs leading-relaxed max-w-sm text-slate-400 font-medium">
-              Managing Director & Founder at <strong className="text-slate-200">YM Automation Private Limited</strong>. Specialized in Mechatronics, IIoT Sensor Systems, and Industrial Automation Cells.
+              Senior Mechatronics Lead & Founder at <strong className="text-slate-200">YM Automation Private Limited</strong>. Specialized in Mechatronics, IIoT Sensor Telemetry, PLC/SCADA Control, and Industrial Automation.
             </p>
             <p className={`text-[11px] font-mono font-semibold ${isDark ? 'text-[#ffb700]' : 'text-cyan-400'}`}>
-              Coimbatore, Tamil Nadu, India
+              Coimbatore, Tamil Nadu, India • Open for Opportunities
             </p>
           </div>
 
           {/* Nav Links */}
           <div className="md:col-span-4 flex flex-wrap gap-x-6 gap-y-2 text-xs font-semibold">
-            <a href="#about" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>About Founder</a>
-            <a href="#venture" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>YM Venture</a>
-            <a href="#investor" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Investor Pitch</a>
-            <a href="#tech" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Tech Competencies</a>
-            <a href="#contact" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Contact & ZeptoMail</a>
+            <a href="#about" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>About Me</a>
+            <a href="#venture" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Systems Built</a>
+            <a href="#experience" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Career Experience</a>
+            <a href="#tech" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Tech Stack</a>
+            <a href="#contact" className={`transition-colors ${isDark ? 'hover:text-[#ffb700]' : 'hover:text-cyan-400'}`}>Contact Yogeshwaran</a>
           </div>
 
           {/* Social Links & Back to Top */}
@@ -99,7 +99,7 @@ export default function Footer({ theme }) {
         }`}>
           <p>© {new Date().getFullYear()} Yogeshwaran Muralidharan • YM Automation Private Limited. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            <span>Built for Investors & Industry 4.0 Enterprises</span>
+            <span>Built for Recruiters, Talent Acquisition Leads & Engineering Executives</span>
           </p>
         </div>
 

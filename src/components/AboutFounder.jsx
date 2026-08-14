@@ -73,18 +73,18 @@ export default function AboutFounder({ theme }) {
               : 'bg-white border-[#015CCF]/30 text-[#015CCF]'
           }`}>
             <Sparkles className="w-3.5 h-3.5" />
-            <span>FOUNDER PROFILE & CREDENTIALS</span>
+            <span>PROFESSIONAL BACKGROUND & QUALIFICATIONS</span>
           </div>
 
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-sans ${
             isDark ? 'text-white' : 'text-slate-900'
           }`}>
-            The Mastermind Behind <span className={isDark ? 'text-gradient-gold' : 'text-gradient-primary'}>YM Automation</span>
+            About <span className={isDark ? 'text-gradient-gold' : 'text-gradient-primary'}>Me</span>
           </h2>
           <p className={`text-sm sm:text-base leading-relaxed ${
             isDark ? 'text-slate-400' : 'text-slate-600'
           }`}>
-            Yogeshwaran Muralidharan combines academic mastery with deep industrial execution experience to build future-ready mechatronics and IoT infrastructure.
+            Combining multi-disciplinary academic training with real-world industrial automation execution to engineer scalable smart factory solutions.
           </p>
         </div>
 
@@ -105,23 +105,23 @@ export default function AboutFounder({ theme }) {
                   <Target className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Engineering Excellence & Entrepreneurial Drive</h3>
-                  <p className={`text-xs font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Managing Director, YM Automation Pvt Ltd</p>
+                  <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>My Engineering Journey</h3>
+                  <p className={`text-xs font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Senior Mechatronics & IIoT Architect</p>
                 </div>
               </div>
 
               <p className={`text-sm leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                Yogeshwaran Muralidharan is a young techie who earned his Bachelor's in Mechatronics and subsequently pursued a Master's in IoT and Sensor Systems. Recognized for his technical depth, he completed a Postgraduate program in Industrial Automation and earned prestigious certification as an <strong className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>L&T Certified Automation Engineer</strong>.
+                My foundation in robotics and intelligent machinery was built during my B.E. in Mechatronics Engineering. To master connected sensor hardware and telemetry, I earned an M.S. in IoT and Sensor Systems, followed by specialized Postgraduate training in Industrial Automation and qualification as an <strong className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>L&T Certified Automation Engineer</strong>.
               </p>
 
               <p className={`text-sm leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                Before founding YM Automation, Yogeshwaran accumulated extensive practical experience working alongside top-notch industrial automation organizations. Harnessing this multi-disciplinary expertise, his mastermind birthed YM Automation Private Limited—an active, pioneer venture dedicated to bridging hardware, sensors, and intelligent software for modern smart manufacturing.
+                As Founder & Managing Director of <strong className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>YM Automation Private Limited</strong>, I have spearheaded the design, programming, and field deployment of custom mechatronic cells, wireless IoT sensor arrays, PLC/SCADA control logic, and enterprise IT-OT cloud bridges for leading manufacturing clients across Tamil Nadu and India.
               </p>
             </div>
 
             {/* Experience Checklist */}
             <div className={`space-y-3 pt-4 border-t ${isDark ? 'border-[#2e3342]' : 'border-slate-100'}`}>
-              <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>Industrial Track Record</h4>
+              <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>My Industrial Track Record</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {experiencePoints.map((point, index) => (
                   <div key={index} className={`flex items-start gap-2 text-xs ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
@@ -166,7 +166,7 @@ export default function AboutFounder({ theme }) {
                 </div>
                 <h4 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>L&T Certified Automation Engineer</h4>
                 <p className={`text-xs leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-                  Certified by Larsen & Toubro's premier automation division, reflecting mastery in industrial safety protocols, motor control centers, drive systems, and heavy industrial automation deployments.
+                  Certified by Larsen & Toubro's premier automation division, reflecting technical mastery in heavy industrial safety protocols, motor control centers, drive systems, and plant automation.
                 </p>
               </div>
 
@@ -190,7 +190,7 @@ export default function AboutFounder({ theme }) {
             <div className={`p-4 rounded-xl border flex items-center justify-between text-xs font-mono ${
               isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-blue-50 border-blue-200'
             }`}>
-              <span className={isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}>COMPANY REGISTRATION</span>
+              <span className={isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}>MY REGISTERED VENTURE</span>
               <span className={`font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Coimbatore, Tamil Nadu</span>
             </div>
 
@@ -201,7 +201,7 @@ export default function AboutFounder({ theme }) {
         {/* Education Timeline Grid */}
         <div className="space-y-6">
           <h3 className={`text-xl font-bold text-center font-sans ${isDark ? 'text-white' : 'text-slate-900'}`}>
-            Academic Foundation & Specializations
+            My Academic Foundation & Specializations
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -4,21 +4,21 @@ import {
   Cpu, 
   Layers, 
   ShieldCheck, 
-  TrendingUp, 
   ArrowRight, 
   ExternalLink, 
   Zap,
   CheckCircle2,
-  FileText
+  FileText,
+  Briefcase
 } from 'lucide-react';
 
-export default function Hero({ onOpenInvestorModal, theme }) {
+export default function Hero({ onOpenResumeModal, theme }) {
   const isDark = theme === 'dark';
 
   const credentials = [
-    { title: "Bachelor's in Mechatronics", subtitle: "Core Robotics & Systems" },
-    { title: "Master's in IoT & Sensor Systems", subtitle: "IIoT Networks & Smart Hardware" },
-    { title: "Postgraduate in Industrial Automation", subtitle: "PLC, SCADA & Robotics" },
+    { title: "Bachelor's in Mechatronics", subtitle: "Core Robotics, Motion & Control" },
+    { title: "Master's in IoT & Sensor Systems", subtitle: "IIoT Sensor Networks & Telemetry" },
+    { title: "Postgraduate in Industrial Automation", subtitle: "PLC, SCADA & Plant Automation" },
     { title: "L&T Certified Automation Engineer", subtitle: "Larsen & Toubro Endorsed Expert" }
   ];
 
@@ -41,19 +41,19 @@ export default function Hero({ onOpenInvestorModal, theme }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Column: Heading & Founder Credentials */}
+          {/* Left Column: Heading & Credentials */}
           <div className="lg:col-span-7 space-y-6 text-left">
             
-            {/* Live Investor Status Badge */}
+            {/* Recruiter Availability Status Badge */}
             <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border text-xs font-mono shadow-sm ${
               isDark 
                 ? 'bg-[#1e212b] border-[#ffb700]/40 text-[#ffb700]' 
                 : 'bg-white border-blue-200 text-slate-800 shadow-blue-900/5'
             }`}>
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className={isDark ? 'text-slate-300 font-medium' : 'text-slate-700 font-semibold'}>Investor Showcase</span>
+              <span className={isDark ? 'text-slate-300 font-medium' : 'text-slate-700 font-semibold'}>Candidate Profile</span>
               <span className={isDark ? 'text-slate-600' : 'text-slate-300'}>|</span>
-              <span className={`font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>YM Automation Pvt Ltd</span>
+              <span className={`font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Open to Engineering Leadership & Lead Roles</span>
             </div>
 
             {/* Main Headline */}
@@ -61,7 +61,7 @@ export default function Hero({ onOpenInvestorModal, theme }) {
               <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-sans leading-[1.1] ${
                 isDark ? 'text-white' : 'text-slate-900'
               }`}>
-                Yogeshwaran <br />
+                Hi, I'm Yogeshwaran <br />
                 <span className={isDark ? 'text-gradient-gold' : 'text-gradient-primary'}>
                   Muralidharan
                 </span>
@@ -69,15 +69,15 @@ export default function Hero({ onOpenInvestorModal, theme }) {
               <p className={`text-lg sm:text-xl font-bold font-sans tracking-wide ${
                 isDark ? 'text-slate-300' : 'text-slate-800'
               }`}>
-                Managing Director & Founder, <span className={isDark ? 'text-[#ffb700] font-extrabold' : 'text-[#015CCF] font-extrabold'}>YM Automation</span>
+                Senior Mechatronics Lead & IIoT Specialist | <span className={isDark ? 'text-[#ffb700] font-extrabold' : 'text-[#015CCF] font-extrabold'}>Founder @ YM Automation</span>
               </p>
             </div>
 
-            {/* Bio summary */}
+            {/* Bio summary in First Person for Recruiters */}
             <p className={`text-sm sm:text-base leading-relaxed font-normal max-w-2xl ${
               isDark ? 'text-slate-300' : 'text-slate-700'
             }`}>
-              A visionary young tech entrepreneur with advanced specialization across mechatronics, sensor architectures, and industrial automation. Having worked with top-tier automation corporations, he created <strong className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>YM Automation Private Limited</strong> to deliver Industry 4.0 IoT solutions, intelligent sensors, and automated mechatronic infrastructure to global industrial enterprises.
+              Accomplished Mechatronics Engineer, IIoT Telemetry Specialist, and Industrial Automation Architect with quad-level credentials (B.E. Mechatronics, M.S. IoT & Sensor Systems, PG Automation, and <strong className={isDark ? 'text-white font-bold' : 'text-slate-900 font-bold'}>L&T Certified Automation Engineer</strong>). Founder of YM Automation Pvt Ltd, with hands-on experience designing high-speed robotic cells, wireless sensor nodes, PLC SCADA infrastructure, and IT-OT enterprise bridges for smart manufacturing.
             </p>
 
             {/* Quick Credentials Pills */}
@@ -104,14 +104,15 @@ export default function Hero({ onOpenInvestorModal, theme }) {
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-4">
               <button
-                onClick={onOpenInvestorModal}
+                onClick={onOpenResumeModal}
                 className={`px-6 py-3.5 rounded-xl font-extrabold text-sm shadow-xl hover:scale-[1.02] transition-all flex items-center gap-2 group ${
                   isDark 
                     ? 'bg-gradient-to-r from-[#ffb700] to-amber-500 text-slate-950 shadow-[#ffb700]/25 hover:shadow-[#ffb700]/40' 
                     : 'bg-[#015CCF] hover:bg-[#014ea4] text-white shadow-[#015CCF]/25 hover:shadow-[#015CCF]/40'
                 }`}
               >
-                <span>Request Investor Pitch Deck</span>
+                <FileText className="w-4 h-4" />
+                <span>View Full Resume</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
 
@@ -123,7 +124,7 @@ export default function Hero({ onOpenInvestorModal, theme }) {
                     : 'bg-white border-blue-300 hover:border-[#015CCF] text-slate-800 hover:text-[#015CCF] shadow-sm'
                 }`}
               >
-                <span>Schedule Meeting</span>
+                <span>Get In Touch</span>
                 <Zap className={`w-4 h-4 ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`} />
               </a>
 
@@ -142,7 +143,7 @@ export default function Hero({ onOpenInvestorModal, theme }) {
 
           </div>
 
-          {/* Right Column: Founder Tech Card Showcase */}
+          {/* Right Column: Candidate Tech Profile Showcase */}
           <div className="lg:col-span-5 relative">
             
             {/* Tech Card Background Glow */}
@@ -177,16 +178,16 @@ export default function Hero({ onOpenInvestorModal, theme }) {
 
                 <div>
                   <h3 className={`text-xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Yogeshwaran M.</h3>
-                  <p className={`text-xs font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Industrial Mechatronics & IIoT Founder</p>
-                  <p className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Managing Director @ YM Automation Pvt Ltd</p>
+                  <p className={`text-xs font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Senior Mechatronics Lead & Systems Architect</p>
+                  <p className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Founder & MD @ YM Automation Pvt Ltd</p>
                 </div>
               </div>
 
               {/* Key Credentials Badges */}
               <div className="space-y-3">
                 <div className="flex items-center justify-between text-xs font-mono">
-                  <span className={`font-semibold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>QUALIFICATION SNAPSHOT</span>
-                  <span className={isDark ? 'text-emerald-400 font-semibold' : 'text-emerald-600 font-bold'}>100% Verified</span>
+                  <span className={`font-semibold ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>VERIFIED QUALIFICATIONS</span>
+                  <span className={isDark ? 'text-emerald-400 font-semibold' : 'text-emerald-600 font-bold'}>Verified Profile</span>
                 </div>
 
                 <div className="space-y-2">
@@ -222,25 +223,25 @@ export default function Hero({ onOpenInvestorModal, theme }) {
                 <div className={`p-3 rounded-xl border text-center ${
                   isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-slate-50 border-slate-200'
                 }`}>
-                  <div className={`text-xl font-extrabold font-mono ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>IIoT + Smart</div>
-                  <div className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Factory Tech Stack</div>
+                  <div className={`text-xl font-extrabold font-mono ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>50+ Systems</div>
+                  <div className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Deployed & Operating</div>
                 </div>
                 <div className={`p-3 rounded-xl border text-center ${
                   isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-slate-50 border-slate-200'
                 }`}>
                   <div className={`text-xl font-extrabold font-mono ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`}>Coimbatore</div>
-                  <div className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Headquarters (TN)</div>
+                  <div className={`text-[11px] mt-0.5 ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>Location (Open to Relocation)</div>
                 </div>
               </div>
 
-              {/* Contact Ready Alert */}
+              {/* Recruiter Ready Alert */}
               <div className={`p-3.5 rounded-xl border flex items-center gap-3 ${
                 isDark ? 'bg-[#ffb700]/10 border-[#ffb700]/30' : 'bg-blue-50 border-blue-200'
               }`}>
-                <FileText className={`w-5 h-5 shrink-0 ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`} />
+                <Briefcase className={`w-5 h-5 shrink-0 ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`} />
                 <div className="text-xs">
-                  <p className={`font-bold ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>Ready for Investor Dialogue</p>
-                  <p className={isDark ? 'text-slate-400 text-[11px]' : 'text-slate-600 text-[11px]'}>ZeptoMail integrated contact direct to MD inbox.</p>
+                  <p className={`font-bold ${isDark ? 'text-slate-200' : 'text-slate-900'}`}>Recruiter Ready Profile</p>
+                  <p className={isDark ? 'text-slate-400 text-[11px]' : 'text-slate-600 text-[11px]'}>Available for technical interviews and leadership inquiries.</p>
                 </div>
               </div>
 

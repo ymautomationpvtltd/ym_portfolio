@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 import InvestorModal from './components/InvestorModal';
 
 export default function App() {
-  const [isInvestorModalOpen, setIsInvestorModalOpen] = useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const [theme, setTheme] = useState('light'); // 'light' (Primary #015CCF on #ebf7ff) or 'dark' (YM Gold #ffb700 on Charcoal #14161d)
 
   const toggleTheme = () => {
@@ -34,7 +34,7 @@ export default function App() {
       
       {/* Navigation Header with Theme Toggle */}
       <Navbar 
-        onOpenInvestorModal={() => setIsInvestorModalOpen(true)}
+        onOpenResumeModal={() => setIsResumeModalOpen(true)}
         theme={theme}
         toggleTheme={toggleTheme}
       />
@@ -42,13 +42,13 @@ export default function App() {
       {/* Main Single Page Content */}
       <main>
         <Hero 
-          onOpenInvestorModal={() => setIsInvestorModalOpen(true)} 
+          onOpenResumeModal={() => setIsResumeModalOpen(true)} 
           theme={theme}
         />
         <AboutFounder theme={theme} />
         <VentureShowcase theme={theme} />
         <InvestorHighlights 
-          onOpenInvestorModal={() => setIsInvestorModalOpen(true)} 
+          onOpenResumeModal={() => setIsResumeModalOpen(true)} 
           theme={theme}
         />
         <TechStack theme={theme} />
@@ -58,10 +58,10 @@ export default function App() {
       {/* Footer */}
       <Footer theme={theme} />
 
-      {/* Investor Pitch Deck Modal */}
+      {/* Interactive Resume Modal */}
       <InvestorModal 
-        isOpen={isInvestorModalOpen} 
-        onClose={() => setIsInvestorModalOpen(false)} 
+        isOpen={isResumeModalOpen} 
+        onClose={() => setIsResumeModalOpen(false)} 
         theme={theme}
       />
 

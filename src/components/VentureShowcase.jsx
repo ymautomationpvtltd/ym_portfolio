@@ -100,14 +100,14 @@ export default function VentureShowcase({ theme }) {
             isDark ? 'bg-[#ffb700]/15 border-[#ffb700]/40 text-[#ffb700]' : 'bg-white border-[#015CCF]/30 text-[#015CCF]'
           }`}>
             <Building2 className="w-3.5 h-3.5" />
-            <span>VENTURE SPOTLIGHT</span>
+            <span>ENGINEERING PROJECTS & SYSTEMS BUILT</span>
           </div>
 
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-sans ${isDark ? 'text-white' : 'text-slate-900'}`}>
-            YM Automation Private Limited
+            Enterprise Systems & Industrial Solutions
           </h2>
           <p className={`text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-            Headquartered in Coimbatore, Tamil Nadu, YM Automation creates state-of-the-art mechatronics, industrial IoT, and automated sensor systems for next-generation factories.
+            Key industrial solutions engineered and deployed under YM Automation Pvt Ltd (Coimbatore, Tamil Nadu), delivering mechatronics, IIoT telemetry, and smart factory control.
           </p>
         </div>
 
@@ -132,9 +132,9 @@ export default function VentureShowcase({ theme }) {
           <div className={`p-5 rounded-2xl border text-center space-y-1 ${
             isDark ? 'bg-[#1e212b] border-[#2e3342] shadow-md' : 'bg-white border-blue-200 shadow-sm'
           }`}>
-            <p className={`text-[11px] font-mono uppercase font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>Leadership</p>
+            <p className={`text-[11px] font-mono uppercase font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>My Role</p>
             <p className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Yogeshwaran M.</p>
-            <p className={`text-[10px] font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Managing Director</p>
+            <p className={`text-[10px] font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>Founder & MD</p>
           </div>
 
           <div className={`p-5 rounded-2xl border text-center space-y-1 ${
@@ -154,7 +154,7 @@ export default function VentureShowcase({ theme }) {
             <h3 className={`text-xs font-mono uppercase tracking-wider font-bold mb-2 ${
               isDark ? 'text-slate-400' : 'text-slate-600'
             }`}>
-              Core Technical Capabilities
+              Our Core Technical Offerings
             </h3>
 
             {venturePillars.map((pillar, idx) => {
@@ -218,7 +218,7 @@ export default function VentureShowcase({ theme }) {
                     <span className={`text-xs font-mono uppercase tracking-widest font-extrabold ${
                       isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'
                     }`}>
-                      PILLAR 0{activeTab + 1}
+                      CAPABILITY 0{activeTab + 1}
                     </span>
                     <h3 className={`text-2xl font-extrabold ${isDark ? 'text-white' : 'text-slate-900'}`}>
                       {venturePillars[activeTab].title}
@@ -277,7 +277,7 @@ export default function VentureShowcase({ theme }) {
                 <Workflow className="w-5 h-5" />
               </div>
               <div>
-                <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>End-to-End Industrial Architecture Flow</h3>
+                <h3 className={`text-lg font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>My End-to-End Industrial Architecture Flow</h3>
                 <p className={`text-xs font-mono ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>How YM Automation powers smart factory connectivity</p>
               </div>
             </div>

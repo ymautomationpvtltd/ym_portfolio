@@ -27,7 +27,7 @@ export default function ContactZeptoMail({ theme }) {
 		name: "",
 		email: "",
 		company: "",
-		inquiryType: "Investor Inquiry",
+		inquiryType: "Job Opportunity",
 		message: "",
 	});
 
@@ -80,7 +80,7 @@ export default function ContactZeptoMail({ theme }) {
 			subject: `[${formData.inquiryType}] New Message from ${formData.name} (${formData.company || "Individual"})`,
 			htmlbody: `
         <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; background-color: #f8fafc; border-radius: 8px;">
-          <h2 style="color: #015CCF; border-bottom: 2px solid #015CCF; padding-bottom: 8px;">New Contact Submission - YM Portfolio</h2>
+          <h2 style="color: #015CCF; border-bottom: 2px solid #015CCF; padding-bottom: 8px;">New Recruiter / Contact Submission - YM Portfolio</h2>
           <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Sender Email:</strong> ${formData.email}</p>
           <p><strong>Organization / Firm:</strong> ${formData.company || "N/A"}</p>
@@ -126,13 +126,13 @@ export default function ContactZeptoMail({ theme }) {
 				if (response.ok) {
 					setStatus("success");
 					setStatusMessage(
-						"Message sent successfully via ZeptoMail! Yogeshwaran Muralidharan will get back to you shortly.",
+						"Message sent successfully via ZeptoMail! I will get back to you shortly.",
 					);
 					setFormData({
 						name: "",
 						email: "",
 						company: "",
-						inquiryType: "Investor Inquiry",
+						inquiryType: "Job Opportunity",
 						message: "",
 					});
 				} else {
@@ -145,7 +145,7 @@ export default function ContactZeptoMail({ theme }) {
 						name: "",
 						email: "",
 						company: "",
-						inquiryType: "Investor Inquiry",
+						inquiryType: "Job Opportunity",
 						message: "",
 					});
 				}
@@ -159,7 +159,7 @@ export default function ContactZeptoMail({ theme }) {
 					name: "",
 					email: "",
 					company: "",
-					inquiryType: "Investor Inquiry",
+					inquiryType: "Job Opportunity",
 					message: "",
 				});
 			}
@@ -173,7 +173,7 @@ export default function ContactZeptoMail({ theme }) {
 				name: "",
 				email: "",
 				company: "",
-				inquiryType: "Investor Inquiry",
+				inquiryType: "Job Opportunity",
 				message: "",
 			});
 		}
@@ -209,16 +209,13 @@ export default function ContactZeptoMail({ theme }) {
 								)
 							}
 						>
-							Yogeshwaran Muralidharan
+							Me
 						</span>
 					</h2>
 					<p
-						className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-slate-400" : "text-slate-600"}`}
+						className={`text-sm sm:text-base leading-relaxed ${isDark ? "text-[#a0aec0]" : "text-slate-600"}`}
 					>
-						Whether you are an investor looking to review our pitch
-						deck, an industrial client seeking automation solutions,
-						or a strategic partner—send a direct email via our
-						integrated ZeptoMail API.
+						Whether you are a recruiter discussing career opportunities, a hiring manager reviewing my profile, or an enterprise client seeking automation expertise—send a message directly to my inbox via ZeptoMail.
 					</p>
 				</div>
 
@@ -259,12 +256,12 @@ export default function ContactZeptoMail({ theme }) {
 									<p
 										className={`text-xs font-mono font-bold ${isDark ? "text-[#ffb700]" : "text-[#015CCF]"}`}
 									>
-										Managing Director & Founder
+										Senior Mechatronics & IIoT Lead
 									</p>
 									<p
 										className={`text-[11px] ${isDark ? "text-slate-400" : "text-slate-600 font-medium"}`}
 									>
-										YM Automation Private Limited
+										Founder & MD @ YM Automation Pvt Ltd
 									</p>
 								</div>
 							</div>
@@ -287,7 +284,7 @@ export default function ContactZeptoMail({ theme }) {
 										<h4
 											className={`text-xs font-mono uppercase font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}
 										>
-											Registered Office
+											Location Base
 										</h4>
 										<p
 											className={`text-sm font-bold ${isDark ? "text-white" : "text-slate-900"}`}
@@ -297,7 +294,7 @@ export default function ContactZeptoMail({ theme }) {
 										<p
 											className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600 font-medium"}`}
 										>
-											Industrial Mechatronics Hub
+											Open to Relocation & Technical Roles
 										</p>
 									</div>
 								</div>
@@ -317,7 +314,7 @@ export default function ContactZeptoMail({ theme }) {
 										<h4
 											className={`text-xs font-mono uppercase font-bold ${isDark ? "text-slate-400" : "text-slate-500"}`}
 										>
-											Company Portal
+											Company & Live Work
 										</h4>
 										<a
 											href="https://www.ymautomation.com/"
@@ -385,13 +382,12 @@ export default function ContactZeptoMail({ theme }) {
 									<h3
 										className={`text-xl font-bold ${isDark ? "text-white" : "text-slate-900"}`}
 									>
-										Send Message
+										Send Me a Message
 									</h3>
 									<p
 										className={`text-xs ${isDark ? "text-slate-400" : "text-slate-600 font-medium"}`}
 									>
-										Direct transmission to Yogeshwaran
-										Muralidharan
+										Direct transmission to Yogeshwaran's personal inbox
 									</p>
 								</div>
 							</div>
@@ -511,7 +507,7 @@ export default function ContactZeptoMail({ theme }) {
 											required
 											value={formData.email}
 											onChange={handleChange}
-											placeholder="e.g. sarah@venturecapital.com"
+											placeholder="e.g. sarah@techcorp.com"
 											className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none ${
 												isDark ?
 													"bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]"
@@ -526,14 +522,14 @@ export default function ContactZeptoMail({ theme }) {
 										<label
 											className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 										>
-											Organization / Firm Name
+											Organization / Company
 										</label>
 										<input
 											type="text"
 											name="company"
 											value={formData.company}
 											onChange={handleChange}
-											placeholder="e.g. Nexus Capital Partners"
+											placeholder="e.g. Siemens / Enterprise Inc."
 											className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none ${
 												isDark ?
 													"bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]"
@@ -558,17 +554,17 @@ export default function ContactZeptoMail({ theme }) {
 												:	"bg-slate-50 border border-blue-200 text-slate-900 focus:border-[#015CCF] focus:bg-white"
 											}`}
 										>
-											<option value="Investor Inquiry">
-												Investor Inquiry (Pitch Deck)
+											<option value="Job Opportunity">
+												Job Opportunity / Direct Hiring
+											</option>
+											<option value="Technical Leadership Role">
+												Technical Leadership Role
 											</option>
 											<option value="Industrial Automation Project">
 												Industrial Automation Project
 											</option>
 											<option value="IIoT & Sensor Solutions">
 												IIoT & Sensor Solutions
-											</option>
-											<option value="Strategic Partnership">
-												Strategic Partnership
 											</option>
 											<option value="General Conversation">
 												General Conversation

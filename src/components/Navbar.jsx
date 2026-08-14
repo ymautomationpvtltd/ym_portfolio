@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Cpu, Menu, X, ArrowUpRight, Mail, Sun, Moon } from "lucide-react";
+import { Cpu, Menu, X, FileText, Sun, Moon } from "lucide-react";
 
-export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
+export default function Navbar({ onOpenResumeModal, theme, toggleTheme }) {
 	const [scrolled, setScrolled] = useState(false);
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const isDark = theme === "dark";
@@ -19,11 +19,11 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 	}, []);
 
 	const navLinks = [
-		{ name: "About Founder", href: "#about" },
-		{ name: "YM Venture", href: "#venture" },
-		{ name: "Investor Highlights", href: "#investor" },
-		{ name: "Engineering Stack", href: "#tech" },
-		{ name: "Contact & ZeptoMail", href: "#contact" },
+		{ name: "About Me", href: "#about" },
+		{ name: "Systems Built", href: "#venture" },
+		{ name: "Career Highlights", href: "#experience" },
+		{ name: "Tech Stack", href: "#tech" },
+		{ name: "Contact", href: "#contact" },
 	];
 
 	return (
@@ -81,7 +81,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 									:	"text-slate-600 font-medium"
 								}`}
 							>
-								YM AUTOMATION PVT LTD
+								SENIOR MECHATRONICS & IIoT LEAD
 							</p>
 						</div>
 					</a>
@@ -122,7 +122,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							title={
 								isDark ?
 									"Switch to Light Mode (#015CCF on #ebf7ff)"
-								:	"Switch to YM Automation Dark Gold Mode"
+								:	"Switch to YM Gold Dark Mode"
 							}
 							aria-label="Toggle Theme"
 						>
@@ -143,7 +143,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 						</button>
 
 						<button
-							onClick={onOpenInvestorModal}
+							onClick={onOpenResumeModal}
 							className={`relative group overflow-hidden px-4 py-2 rounded-xl font-bold text-xs shadow-lg transition-all hover:scale-[1.02] whitespace-nowrap shrink-0 ${
 								isDark ?
 									"bg-gradient-to-r from-[#ffb700] to-amber-500 text-slate-950 shadow-[#ffb700]/25 hover:shadow-[#ffb700]/40 font-extrabold"
@@ -151,8 +151,8 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 							}`}
 						>
 							<span className="relative z-10 flex items-center gap-1.5 whitespace-nowrap">
-								<span>Investor Deck</span>
-								<ArrowUpRight className="w-3.5 h-3.5 shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+								<FileText className="w-3.5 h-3.5 shrink-0" />
+								<span>View Resume</span>
 							</span>
 						</button>
 					</div>
@@ -174,14 +174,15 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 						</button>
 
 						<button
-							onClick={onOpenInvestorModal}
-							className={`px-3 py-1.5 rounded-lg border text-xs font-bold whitespace-nowrap shrink-0 ${
+							onClick={onOpenResumeModal}
+							className={`px-3 py-1.5 rounded-lg border text-xs font-bold whitespace-nowrap shrink-0 flex items-center gap-1 ${
 								isDark ?
 									"bg-[#ffb700]/15 text-[#ffb700] border-[#ffb700]/40"
 								:	"bg-[#015CCF]/10 text-[#015CCF] border-[#015CCF]/30"
 							}`}
 						>
-							Deck
+							<FileText className="w-3 h-3" />
+							<span>Resume</span>
 						</button>
 						<button
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -227,7 +228,7 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 						<button
 							onClick={() => {
 								setMobileMenuOpen(false);
-								onOpenInvestorModal();
+								onOpenResumeModal();
 							}}
 							className={`w-full py-2.5 rounded-xl font-bold text-xs text-center flex items-center justify-center gap-1.5 whitespace-nowrap ${
 								isDark ?
@@ -235,8 +236,8 @@ export default function Navbar({ onOpenInvestorModal, theme, toggleTheme }) {
 								:	"bg-[#015CCF] text-white"
 							}`}
 						>
-							<span>Request Investor Pitch Deck</span>
-							<ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
+							<FileText className="w-3.5 h-3.5 shrink-0" />
+							<span>View Interactive Resume</span>
 						</button>
 					</div>
 				</div>

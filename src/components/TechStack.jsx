@@ -91,14 +91,14 @@ export default function TechStack({ theme }) {
             isDark ? 'bg-[#ffb700]/15 border-[#ffb700]/40 text-[#ffb700]' : 'bg-white border-[#015CCF]/30 text-[#015CCF]'
           }`}>
             <Cpu className="w-3.5 h-3.5" />
-            <span>ENGINEERING COMPETENCIES</span>
+            <span>MY TECHNICAL COMPETENCIES</span>
           </div>
 
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight font-sans ${isDark ? 'text-white' : 'text-slate-900'}`}>
-            Technical Stack & Core Skills
+            Engineering Capabilities & Core Stack
           </h2>
           <p className={`text-sm sm:text-base leading-relaxed ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
-            Engineered through rigorous academics (B.E. Mechatronics, M.S. IoT, PG Automation) and validated by top industrial experience.
+            Engineered through my rigorous academic training (B.E. Mechatronics, M.S. IoT, PG Automation) and validated by top-tier industrial execution.
           </p>
         </div>
 

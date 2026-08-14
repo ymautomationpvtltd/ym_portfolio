@@ -1,41 +1,46 @@
 import React, { useState } from 'react';
-import { X, FileText, CheckCircle2, Send, Download, ShieldCheck, Sparkles, Building } from 'lucide-react';
+import { X, FileText, CheckCircle2, Download, ShieldCheck, Sparkles, Briefcase, GraduationCap, Mail, Phone, ExternalLink } from 'lucide-react';
 
 export default function InvestorModal({ isOpen, onClose, theme }) {
-  const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
   const isDark = theme === 'dark';
-
-  const [investorForm, setInvestorForm] = useState({
-    name: '',
-    firm: '',
-    email: '',
-    ticketSize: '₹50 Lakhs - ₹2 Crores (Angel / Pre-Seed)',
-    notes: ''
-  });
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+  const handleCopySummary = () => {
+    const summary = `Yogeshwaran Muralidharan - Senior Mechatronics & IIoT Systems Lead
+Qualifications: B.E. Mechatronics, M.S. IoT & Sensor Systems, PG Industrial Automation, L&T Certified Automation Engineer.
+Current Role: Founder & Managing Director, YM Automation Pvt Ltd.
+Specializations: Mechatronic Cell Architecture, Wireless IIoT Sensor Gateways, Siemens/Rockwell PLC SCADA, IT-OT Telemetry.
+Location: Coimbatore, Tamil Nadu, India (Open to technical leadership roles & relocation).
+Website: https://www.ymautomation.com/
+LinkedIn: https://www.linkedin.com/in/yogeshwaranmuralidharan/`;
+
+    navigator.clipboard.writeText(summary);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 3000);
+  };
+
+  const handlePrintResume = () => {
+    window.print();
   };
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-md animate-fadeIn ${
-      isDark ? 'bg-slate-950/80' : 'bg-slate-900/60'
+    <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-md animate-fadeIn overflow-y-auto ${
+      isDark ? 'bg-slate-950/85' : 'bg-slate-900/65'
     }`}>
       
       {/* Modal Card */}
-      <div className={`relative w-full max-w-xl rounded-3xl p-6 sm:p-8 border shadow-2xl space-y-6 ${
+      <div className={`relative w-full max-w-2xl rounded-3xl p-6 sm:p-8 border shadow-2xl space-y-6 my-auto max-h-[90vh] overflow-y-auto ${
         isDark 
-          ? 'bg-[#1e212b] border-[#2e3342] shadow-black/60' 
-          : 'bg-white border-blue-200 shadow-blue-900/20'
+          ? 'bg-[#1e212b] border-[#2e3342] text-slate-100 shadow-black/80' 
+          : 'bg-white border-blue-200 text-slate-900 shadow-blue-900/30'
       }`}>
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className={`absolute top-5 right-5 p-2 rounded-xl border transition-colors ${
+          className={`absolute top-5 right-5 p-2 rounded-xl border transition-colors z-10 ${
             isDark 
               ? 'bg-[#14161d] text-slate-400 hover:text-white border-[#2e3342]' 
               : 'bg-slate-100 text-slate-500 hover:text-slate-900 hover:bg-slate-200 border-slate-200'
@@ -45,165 +50,118 @@ export default function InvestorModal({ isOpen, onClose, theme }) {
           <X className="w-5 h-5" />
         </button>
 
-        {submitted ? (
-          <div className="text-center py-8 space-y-4">
-            <div className={`w-16 h-16 rounded-full border flex items-center justify-center mx-auto ${
-              isDark ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30' : 'bg-emerald-100 text-emerald-600 border-emerald-300'
-            }`}>
-              <CheckCircle2 className="w-8 h-8" />
+        {/* Modal Header */}
+        <div className="space-y-2 pr-8 border-b pb-4 border-slate-200/20">
+          <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-bold ${
+            isDark 
+              ? 'bg-[#ffb700]/15 border-[#ffb700]/40 text-[#ffb700]' 
+              : 'bg-[#015CCF]/10 border-[#015CCF]/30 text-[#015CCF]'
+          }`}>
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>CANDIDATE CURRICULUM VITAE</span>
+          </div>
+          <h3 className={`text-2xl sm:text-3xl font-extrabold ${isDark ? 'text-white' : 'text-slate-900'}`}>
+            Yogeshwaran Muralidharan
+          </h3>
+          <p className={`text-xs font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>
+            Senior Mechatronics & IIoT Lead | Founder @ YM Automation Pvt Ltd
+          </p>
+        </div>
+
+        {/* Executive Summary */}
+        <div className="space-y-3">
+          <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+            Executive Summary
+          </h4>
+          <p className={`text-xs sm:text-sm leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+            Multi-disciplinary Mechatronics Engineer & Industrial IoT Specialist with dual degrees (B.E. Mechatronics, M.S. IoT & Sensor Systems) and certification as an <strong className={isDark ? 'text-white' : 'text-slate-900'}>L&T Certified Automation Engineer</strong>. Proven experience architecting 50+ IIoT telemetry nodes, custom mechatronic cells, and Siemens/Rockwell PLC SCADA systems for industrial manufacturing clients across Tamil Nadu.
+          </p>
+        </div>
+
+        {/* Verified Academic & Professional Qualifications */}
+        <div className="space-y-3">
+          <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+            Degrees & Endorsements
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className={`p-3 rounded-xl border text-xs ${isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-blue-50/70 border-blue-200'}`}>
+              <div className="font-bold">B.E. Mechatronics Engineering</div>
+              <div className="text-[11px] text-slate-500 font-mono">Core Robotics & Control Systems</div>
             </div>
-
-            <h3 className={`text-2xl font-bold ${isDark ? 'text-white' : 'text-slate-900'}`}>Investor Deck Access Granted!</h3>
-            
-            <p className={`text-sm max-w-md mx-auto ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-              Thank you, <strong className={isDark ? 'text-white' : 'text-slate-900'}>{investorForm.name}</strong> ({investorForm.firm || 'Investor'}). The YM Automation Investor Deck & Financial Overview package has been sent to <span className={`font-mono font-bold ${isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}`}>{investorForm.email}</span>.
-            </p>
-
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-              <a
-                href="#contact"
-                onClick={onClose}
-                className={`w-full sm:w-auto px-6 py-3 rounded-xl font-extrabold text-xs hover:scale-[1.02] transition-all flex items-center justify-center gap-2 ${
-                  isDark ? 'bg-[#ffb700] text-slate-950 hover:bg-[#ffa000]' : 'bg-[#015CCF] text-white hover:bg-[#014ea4]'
-                }`}
-              >
-                <span>Schedule Founder Call</span>
-              </a>
-              <button
-                onClick={() => {
-                  setSubmitted(false);
-                  onClose();
-                }}
-                className={`w-full sm:w-auto px-6 py-3 rounded-xl border text-xs font-semibold ${
-                  isDark 
-                    ? 'bg-[#14161d] border-[#2e3342] text-slate-300 hover:text-white' 
-                    : 'bg-slate-100 border-slate-200 text-slate-700 hover:text-slate-900'
-                }`}
-              >
-                Close Window
-              </button>
+            <div className={`p-3 rounded-xl border text-xs ${isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-blue-50/70 border-blue-200'}`}>
+              <div className="font-bold">M.S. IoT & Sensor Systems</div>
+              <div className="text-[11px] text-slate-500 font-mono">IIoT Telemetry & Wireless Networks</div>
+            </div>
+            <div className={`p-3 rounded-xl border text-xs ${isDark ? 'bg-[#14161d] border-[#2e3342]' : 'bg-blue-50/70 border-blue-200'}`}>
+              <div className="font-bold">PG Industrial Automation</div>
+              <div className="text-[11px] text-slate-500 font-mono">PLC, SCADA & HMI Infrastructure</div>
+            </div>
+            <div className={`p-3 rounded-xl border text-xs ${isDark ? 'bg-[#14161d] border-emerald-500/30' : 'bg-emerald-50 border-emerald-200'}`}>
+              <div className={`font-bold ${isDark ? 'text-emerald-400' : 'text-emerald-800'}`}>L&T Certified Automation Eng.</div>
+              <div className="text-[11px] text-slate-500 font-mono">Larsen & Toubro Verified</div>
             </div>
           </div>
-        ) : (
-          <>
-            {/* Modal Header */}
-            <div className="space-y-2 pr-8">
-              <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full border text-xs font-mono font-bold ${
-                isDark 
-                  ? 'bg-[#ffb700]/15 border-[#ffb700]/40 text-[#ffb700]' 
-                  : 'bg-[#015CCF]/10 border-[#015CCF]/30 text-[#015CCF]'
+        </div>
+
+        {/* Technical Core Competencies */}
+        <div className="space-y-3">
+          <h4 className={`text-xs font-mono uppercase tracking-wider font-bold ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+            Core Technical Skills
+          </h4>
+          <div className="flex flex-wrap gap-1.5 text-xs font-mono">
+            {["Mechatronics", "IIoT Telemetry", "Siemens S7", "Rockwell Allen-Bradley", "SCADA / HMI", "MQTT / OPC-UA", "Node-RED", "Python Telemetry", "VFD & MCC Panels", "Robotic Kinematics", "Pneumatics", "L&T Safety Standards"].map((skill, idx) => (
+              <span key={idx} className={`px-2.5 py-1 rounded-lg border ${
+                isDark ? 'bg-[#14161d] border-[#2e3342] text-slate-200' : 'bg-slate-100 border-slate-200 text-slate-800 font-medium'
               }`}>
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>CONFIDENTIAL INVESTOR DECK</span>
-              </div>
-              <h3 className={`text-2xl font-extrabold ${isDark ? 'text-white' : 'text-slate-900'}`}>
-                Request YM Automation Pitch Deck
-              </h3>
-              <p className={`text-xs ${isDark ? 'text-slate-400' : 'text-slate-600 font-medium'}`}>
-                Direct access to financial projections, market expansion strategy, and technical IP summary.
-              </p>
-            </div>
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
 
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              
-              <div>
-                <label className={`block text-xs font-mono font-bold mb-1 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                  Full Name <span className={isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}>*</span>
-                </label>
-                <input
-                  type="text"
-                  required
-                  value={investorForm.name}
-                  onChange={(e) => setInvestorForm({ ...investorForm, name: e.target.value })}
-                  placeholder="e.g. Alexander Vance"
-                  className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none ${
-                    isDark 
-                      ? 'bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]' 
-                      : 'bg-slate-50 border border-blue-200 text-slate-900 placeholder-slate-400 focus:border-[#015CCF] focus:bg-white'
-                  }`}
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className={`block text-xs font-mono font-bold mb-1 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                    Venture / Firm Name
-                  </label>
-                  <input
-                    type="text"
-                    value={investorForm.firm}
-                    onChange={(e) => setInvestorForm({ ...investorForm, firm: e.target.value })}
-                    placeholder="e.g. Catalyst Ventures"
-                    className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none ${
-                      isDark 
-                        ? 'bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]' 
-                        : 'bg-slate-50 border border-blue-200 text-slate-900 placeholder-slate-400 focus:border-[#015CCF] focus:bg-white'
-                    }`}
-                  />
-                </div>
-
-                <div>
-                  <label className={`block text-xs font-mono font-bold mb-1 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                    Work Email <span className={isDark ? 'text-[#ffb700]' : 'text-[#015CCF]'}>*</span>
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={investorForm.email}
-                    onChange={(e) => setInvestorForm({ ...investorForm, email: e.target.value })}
-                    placeholder="e.g. alex@catalyst.com"
-                    className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none ${
-                      isDark 
-                        ? 'bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]' 
-                        : 'bg-slate-50 border border-blue-200 text-slate-900 placeholder-slate-400 focus:border-[#015CCF] focus:bg-white'
-                    }`}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className={`block text-xs font-mono font-bold mb-1 ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-                  Investment Ticket Size Range (INR)
-                </label>
-                <select
-                  value={investorForm.ticketSize}
-                  onChange={(e) => setInvestorForm({ ...investorForm, ticketSize: e.target.value })}
-                  className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none font-medium ${
-                    isDark 
-                      ? 'bg-[#14161d] border border-[#2e3342] text-white focus:border-[#ffb700]' 
-                      : 'bg-slate-50 border border-blue-200 text-slate-900 focus:border-[#015CCF] focus:bg-white'
-                  }`}
-                >
-                  <option value="₹50 Lakhs - ₹2 Crores (Angel / Pre-Seed)">₹50 Lakhs - ₹2 Crores (Angel / Pre-Seed)</option>
-                  <option value="₹2 Crores - ₹10 Crores (Seed Expansion)">₹2 Crores - ₹10 Crores (Seed Expansion)</option>
-                  <option value="₹10 Crores+ (Series A)">₹10 Crores+ (Strategic / Series A)</option>
-                  <option value="Commercial Partnership">Commercial Partnership / Client Project</option>
-                </select>
-              </div>
-
-              <button
-                type="submit"
-                className={`w-full py-4 rounded-xl font-extrabold text-xs shadow-lg transition-all flex items-center justify-center gap-2 ${
-                  isDark 
-                    ? 'bg-[#ffb700] text-slate-950 hover:bg-[#ffa000] shadow-[#ffb700]/25' 
-                    : 'bg-[#015CCF] text-white hover:bg-[#014ea4] shadow-[#015CCF]/25'
-                }`}
-              >
+        {/* Action Buttons */}
+        <div className="pt-4 border-t border-slate-200/20 flex flex-col sm:flex-row items-center gap-3">
+          <button
+            onClick={handleCopySummary}
+            className={`w-full sm:w-auto flex-1 py-3 px-4 rounded-xl font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 ${
+              isDark 
+                ? 'bg-gradient-to-r from-[#ffb700] to-amber-500 text-slate-950 hover:brightness-110' 
+                : 'bg-[#015CCF] text-white hover:bg-[#014ea4]'
+            }`}
+          >
+            {copied ? (
+              <>
+                <CheckCircle2 className="w-4 h-4" />
+                <span>Profile Copied to Clipboard!</span>
+              </>
+            ) : (
+              <>
                 <FileText className="w-4 h-4" />
-                <span>Receive Pitch Deck & Financial Summary</span>
-              </button>
+                <span>Copy Quick Profile Summary</span>
+              </>
+            )}
+          </button>
 
-              <div className={`flex items-center justify-center gap-1.5 text-[11px] font-mono font-medium ${
-                isDark ? 'text-slate-500' : 'text-slate-500'
-              }`}>
-                <ShieldCheck className={`w-3.5 h-3.5 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
-                <span>Encrypted transmission to Founder Inbox</span>
-              </div>
+          <a
+            href="#contact"
+            onClick={onClose}
+            className={`w-full sm:w-auto px-6 py-3 rounded-xl border text-xs font-bold transition-all flex items-center justify-center gap-2 ${
+              isDark 
+                ? 'bg-[#14161d] border-[#2e3342] text-slate-200 hover:text-white hover:border-[#ffb700]' 
+                : 'bg-slate-100 border-slate-200 text-slate-800 hover:text-[#015CCF]'
+            }`}
+          >
+            <Mail className="w-4 h-4" />
+            <span>Send Direct Message</span>
+          </a>
+        </div>
 
-            </form>
-          </>
-        )}
+        <div className={`flex items-center justify-center gap-1.5 text-[11px] font-mono font-medium ${
+          isDark ? 'text-slate-500' : 'text-slate-500'
+        }`}>
+          <ShieldCheck className={`w-3.5 h-3.5 ${isDark ? 'text-emerald-400' : 'text-emerald-600'}`} />
+          <span>Verified Candidate Profile • Yogeshwaran Muralidharan</span>
+        </div>
 
       </div>
 

@@ -458,6 +458,7 @@ export default function ContactZeptoMail({ theme }) {
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<div>
 										<label
+											htmlFor="contact-name"
 											className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 										>
 											Your Full Name{" "}
@@ -472,6 +473,7 @@ export default function ContactZeptoMail({ theme }) {
 											</span>
 										</label>
 										<input
+											id="contact-name"
 											type="text"
 											name="name"
 											required
@@ -488,6 +490,7 @@ export default function ContactZeptoMail({ theme }) {
 
 									<div>
 										<label
+											htmlFor="contact-email"
 											className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 										>
 											Your Email Address{" "}
@@ -502,6 +505,7 @@ export default function ContactZeptoMail({ theme }) {
 											</span>
 										</label>
 										<input
+											id="contact-email"
 											type="email"
 											name="email"
 											required
@@ -520,11 +524,13 @@ export default function ContactZeptoMail({ theme }) {
 								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 									<div>
 										<label
+											htmlFor="contact-company"
 											className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 										>
 											Organization / Company
 										</label>
 										<input
+											id="contact-company"
 											type="text"
 											name="company"
 											value={formData.company}
@@ -540,11 +546,13 @@ export default function ContactZeptoMail({ theme }) {
 
 									<div>
 										<label
+											htmlFor="contact-inquiry-type"
 											className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 										>
 											Inquiry Category
 										</label>
 										<select
+											id="contact-inquiry-type"
 											name="inquiryType"
 											value={formData.inquiryType}
 											onChange={handleChange}
@@ -575,6 +583,7 @@ export default function ContactZeptoMail({ theme }) {
 
 								<div>
 									<label
+										htmlFor="contact-message"
 										className={`block text-xs font-mono font-bold mb-1 ${isDark ? "text-slate-300" : "text-slate-700"}`}
 									>
 										Your Message{" "}
@@ -589,12 +598,13 @@ export default function ContactZeptoMail({ theme }) {
 										</span>
 									</label>
 									<textarea
+										id="contact-message"
 										name="message"
 										required
 										rows="4"
 										value={formData.message}
 										onChange={handleChange}
-										placeholder="Describe your interest, project requirements, or investor meeting request..."
+										placeholder="Describe your interest, project requirements, or technical interview request..."
 										className={`w-full px-4 py-3 rounded-xl text-sm transition-all focus:outline-none resize-none ${
 											isDark ?
 												"bg-[#14161d] border border-[#2e3342] text-white placeholder-slate-500 focus:border-[#ffb700]"
